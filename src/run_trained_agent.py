@@ -43,8 +43,8 @@ rcParams['pdf.fonttype'] = 42   # To avoid Type 3 fonts in figures
 rcParams['ps.fonttype'] = 42
 
 """ Options: """
-filepath = '../logs/train_agent_DATE_TIME_NAME/'
-agent_name = 'STEP'
+filepath = 'C:/projects/TacticalDM/logs/train_agent_20210714_215325/'
+agent_name = '4700037'
 case = 'rerun_test_scenarios'   # 'rerun_test_scenarios', 'fast_overtaking', 'standstill'
 use_ensemble_test_policy = False
 safety_threshold = 0.02   # Only used if ensemble test policy is chosen
@@ -139,6 +139,7 @@ if case == 'rerun_test_scenarios':
             if 'safe_action' in action_info:
                 if action_info['safe_action']:
                     nb_safe_actions += 1
+
                 if action_info['coefficient_of_variation'][action] > max_coef_of_var:
                     max_coef_of_var = action_info['coefficient_of_variation'][action]
             if save_video:
@@ -152,6 +153,7 @@ if case == 'rerun_test_scenarios':
         print("Episode reward: " + str(episode_reward))
         print("Number of safety actions: " + str(nb_safe_actions))
         print('Max coef of var: ' + str(max_coef_of_var))
+        print('Coefficient of var: ' + str(action_info['coefficient_of_variation'][action]))
 
     print(episode_rewards)
     print(episode_steps)
