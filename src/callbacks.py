@@ -106,3 +106,4 @@ class StoreTestEpisodeData(Callback):
                 self.reward_data.append(logs['reward'])
                 if 'q_values_of_chosen_action' in logs:
                     self.q_values_data.append(logs['q_values_of_chosen_action'])
+                    
